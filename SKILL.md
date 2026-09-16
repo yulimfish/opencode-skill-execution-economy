@@ -1,6 +1,6 @@
 ---
 name: execution-economy
-description: "Use when judging how much checking, verification, or auditing a task actually needs — the execution-economy / risk-tier layer. Balances safety, effect, and speed: final-state-first, minimal-sufficient verification, never re-verify a settled fact, narrow-scope commands over broad-scope-plus-audit, failure-driven complexity, bypass environment problems instead of rebuilding them, automation cost control, continuous execution that does not stop at intermediate steps. Load when tempted to add another verification round, re-check known state, re-engineer a flaky helper, or pause for 'continue'. Complements tool-call-discipline, post-task-audit, clarify-before-act."
+description: "Use when judging how much checking, verification, or auditing a task actually needs — the execution-economy / risk-tier layer. Balances safety, effect, and speed: final-state-first, minimal-sufficient verification, never re-verify a settled fact, narrow-scope commands over broad-scope-plus-audit, failure-driven complexity, bypass environment problems instead of rebuilding them, automation cost control, continuous execution that does not stop at intermediate steps. Load when tempted to add another verification round, re-check known state, re-engineer a flaky helper, or pause for 'continue'. Complements tool-call-discipline, post-task-audit, clarify-before-act, swarm-cluster."
 ---
 
 # Execution Economy — 风险分级与最小充分
@@ -32,7 +32,7 @@ description: "Use when judging how much checking, verification, or auditing a ta
 | Level | 触发 | 执行 | 验证 | 审计 |
 |---|---|---|---|---|
 | **1 低风险可逆** | 查询状态、改文档/checkbox、格式、已授权的小改/提交 | 直接连续执行到终点，逐步不停 | 回读目标 + diff 仅含目标改动 | 不审 |
-| **2 中等** | 改代码、更新依赖、改项目配置、多文件提交、本地自动化测试 | 一次前置范围确认 + 连续执行 | 一次针对性验证 | 仅当可发布产物 / 触碰凭证 / ≥3 文件或 ≥30 行 |
+| **2 中等** | 改代码、更新依赖、改项目配置、多文件提交、本地自动化测试 | 一次前置范围确认 + 连续执行 | 一次针对性验证 | 仅当可发布产物 / 破坏性操作 / 触碰凭证 / ≥3 文件或 ≥30 行 / 含糊验收 / 用户明确要求 |
 | **3 高风险不可逆** | 删数据、强覆盖、DB 迁移、重写历史、force-push、改生产、发布、大范围自动改 | 备份 + 关键不可逆步骤前确认 | 严格 | 强制 Plan→Build→Audit |
 
 - Level 3 允许用速度换安全，但仍不得做与风险无关的无限检查。
