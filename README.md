@@ -24,7 +24,7 @@ git clone --depth=1 https://github.com/Yulimfish/opencode-skill-execution-econom
   ~/.config/opencode/skills/execution-economy
 ```
 
-或用 [opencode-codex-kit](https://github.com/Yulimfish/opencode-codex-kit) 一键装齐。
+或用 [opencode-workflow-kit](https://github.com/Yulimfish/opencode-workflow-kit) 一键装齐。
 
 ## 与其它技能的分工
 
